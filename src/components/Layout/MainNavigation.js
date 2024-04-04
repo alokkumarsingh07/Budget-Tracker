@@ -31,12 +31,12 @@ const MainNavigation = () => {
           )}
           {isLoggedIn && (
             <li>
-              <button onClick={logoutHandler}>Logout</button>
+              <Link to="/expense">Expenses</Link>
             </li>
           )}
           {isLoggedIn && (
             <li>
-              <Link to="/expense">Expenses</Link>
+              <button onClick={logoutHandler}>Logout</button>
             </li>
           )}
         </ul>
