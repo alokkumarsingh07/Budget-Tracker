@@ -5,6 +5,7 @@ import UserProfile from "./components/Profile/UserProfile";
 import AuthPage from "./pages/AuthPage";
 import HomePage from "./pages/HomePage";
 import AuthContext from "./components/store/auth-context";
+import Expenses from "./pages/Expenses";
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -22,6 +23,10 @@ function App() {
 
         <Route path="/profile">
           {authCtx.isLoggedIn && <UserProfile />}{" "}
+          {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+        </Route>
+        <Route path="/expense">
+          {authCtx.isLoggedIn && <Expenses />}{" "}
           {!authCtx.isLoggedIn && <Redirect to="/auth" />}
         </Route>
         
